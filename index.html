@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marta Fuentes - Full Stack Developer & Blockchain Specialist</title>
-    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+    <!-- Model Viewer (solo una vez) -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
-    
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
@@ -45,14 +42,12 @@
     </script>
 </head>
 <body class="bg-background text-foreground font-sans antialiased">
-    
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <a href="#hero" class="text-2xl font-bold font-serif bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
-                Marta
+              ❤️  Marta Fuentes
             </a>
-            
             <!-- Desktop Menu -->
             <ul class="hidden md:flex items-center gap-8">
                 <li><a href="#about" class="text-sm font-medium hover:text-primary transition-colors">Sobre mí</a></li>
@@ -62,13 +57,11 @@
                 <li><a href="#experience" class="text-sm font-medium hover:text-primary transition-colors">Experiencia</a></li>
                 <li><a href="#contact" class="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl">Contacto</a></li>
             </ul>
-            
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-muted rounded-lg transition-colors">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </nav>
-        
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-background border-t border-border">
             <ul class="container mx-auto px-4 py-4 space-y-3">
@@ -83,65 +76,78 @@
     </header>
 
     <main class="min-h-screen">
-        
-        <!-- Hero Section -->
+        <!-- Hero Section con Avatar 3D -->
         <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
             <div class="gradient-blob gradient-blob-pink"></div>
             <div class="gradient-blob gradient-blob-rose"></div>
-            
             <div class="container mx-auto px-4 max-w-6xl relative z-10">
-                <div class="max-w-3xl space-y-8">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="sparkles" class="w-4 h-4 text-primary"></i>
-                        <p class="text-sm text-primary font-medium tracking-wide uppercase">Full Stack Developer</p>
-                    </div>
-
-                    <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-                        Building polished software and <span class="text-primary font-serif">blockchain experiences</span>
-                    </h1>
-
-                    <p class="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                        I'm a developer passionate about crafting accessible, production-ready applications that blend thoughtful design with robust engineering. My work focuses on Web3, DeFi, and decentralized systems.
-                    </p>
-
-                    <div class="flex flex-wrap items-center gap-4 pt-4">
-                        <a href="#contact" class="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-2">
-                            Get in touch
-                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                        </a>
-
-                        <div class="flex items-center gap-3 ml-4">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
-                                <i data-lucide="github" class="w-5 h-5"></i>
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <!-- Texto a la izquierda -->
+                    <div class="md:w-2/3 text-center md:text-left space-y-8">
+                        <div class="flex items-center justify-center md:justify-start gap-2">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-primary"></i>
+                            <p class="text-sm text-primary font-medium tracking-wide uppercase">Full Stack Developer</p>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+                            Building polished software and <span class="text-primary font-serif">blockchain experiences</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto md:mx-0">
+                            I'm a developer passionate about crafting accessible, production-ready applications that blend thoughtful design with robust engineering. My work focuses on Web3, DeFi, and decentralized systems.
+                        </p>
+                        <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
+                            <a href="#contact" class="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-2">
+                                Get in touch
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
-                                <i data-lucide="linkedin" class="w-5 h-5"></i>
-                            </a>
-                            <a href="mailto:marta@example.com" class="text-muted-foreground hover:text-primary transition-colors" aria-label="Email">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
-                            </a>
+                            <div class="flex items-center gap-3">
+                                <a href="https://github.com/MartaFuentes-mcr" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/marta-olivares-246148224/" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
+                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                </a>
+                                <a href="mailto:martafuentesdev@gmail.com" class="text-muted-foreground hover:text-primary transition-colors" aria-label="Email">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Avatar 3D a la derecha -->
+                         <!-- Avatar 3D a la derecha (sin cuadro, más grande) -->
+                         <div class="md:w-1/3 flex justify-center md:justify-end">
+                          <model-viewer
+                          src="https://models.readyplayer.me/68f2f7340e54a41a6486b4e4.glb"
+                           alt="Avatar 3D de Marta"
+                        auto-rotate
+                        camera-controls
+                         ar
+                        shadow-intensity="1"
+                        environment-image="neutral"
+                        style="width: 100%; max-width: 400px; height: 500px; background: transparent; border: none; box-shadow: none;"
+                        class="avatar-3d"
+                        >
+                    <button slot="ar-button" class="bg-primary text-white px-3 py-1.5 rounded-md text-xs font-medium hover:bg-primary-dark transition-colors">
+                         Ver en AR
+                    </button>
+                    <div id="loading-info" slot="poster" class="text-gray-500 text-sm">Cargando...</div>
+                   </model-viewer>
+                      </div>
                 </div>
             </div>
         </section>
-
         <!-- About Section -->
         <section id="about" class="py-20 md:py-32 relative overflow-hidden">
             <div class="gradient-blob gradient-blob-rose" style="top: 0; right: 0;"></div>
-
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-3xl mx-auto text-center space-y-6">
                     <p class="text-sm font-bold text-primary uppercase tracking-wider">Sobre mí</p>
-
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight font-serif">
                         Construyo con transparencia y propósito
                     </h2>
-
                     <p class="text-lg text-muted-foreground leading-relaxed">
                         Soy una desarrolladora full stack enfocada en soluciones descentralizadas con blockchain, inteligencia artificial y criptoeconomía. Fundadora de <strong class="text-primary">BlockRider</strong> y <strong class="text-primary">CivicDAO</strong>, dos plataformas orientadas a la autonomía y la innovación social.
                     </p>
-
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
                         <div class="p-6 text-center bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl hover:border-primary/40 transition-all hover:shadow-lg">
                             <div class="text-3xl md:text-4xl font-bold bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">
@@ -175,22 +181,18 @@
                         Acompaño a startups y equipos a lanzar productos confiables, medibles y escalables.
                     </p>
                 </div>
-
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     <!-- Service 1 -->
                     <div class="p-6 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 group">
                         <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
                             <i data-lucide="code-2" class="w-8 h-8 text-white"></i>
                         </div>
-
                         <h3 class="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
                             Aplicaciones Full-Stack
                         </h3>
-
                         <p class="text-muted-foreground mb-4 text-sm leading-relaxed">
                             Frontends accesibles, APIs robustas y bases de datos seguras listas para producción. Desarrollo integral con foco en experiencia de usuario y escalabilidad.
                         </p>
-
                         <ul class="space-y-2">
                             <li class="text-sm text-foreground/80 flex items-start gap-2">
                                 <span class="text-primary mt-0.5">✓</span>
@@ -206,21 +208,17 @@
                             </li>
                         </ul>
                     </div>
-
                     <!-- Service 2 -->
                     <div class="p-6 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 group">
                         <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
                             <i data-lucide="file-code-2" class="w-8 h-8 text-white"></i>
                         </div>
-
                         <h3 class="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
                             Smart Contracts
                         </h3>
-
                         <p class="text-muted-foreground mb-4 text-sm leading-relaxed">
                             Diseño, implementación y pruebas de contratos inteligentes con foco en seguridad y auditabilidad. Integración con plataformas DeFi y DAOs.
                         </p>
-
                         <ul class="space-y-2">
                             <li class="text-sm text-foreground/80 flex items-start gap-2">
                                 <span class="text-primary mt-0.5">✓</span>
@@ -236,21 +234,17 @@
                             </li>
                         </ul>
                     </div>
-
                     <!-- Service 3 -->
                     <div class="p-6 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 group">
                         <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
                             <i data-lucide="coins" class="w-8 h-8 text-white"></i>
                         </div>
-
                         <h3 class="text-xl font-bold mb-3 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
                             Crypto & DeFi
                         </h3>
-
                         <p class="text-muted-foreground mb-4 text-sm leading-relaxed">
                             Integraciones Web3, pagos, wallets y analítica on-chain para productos financieros. Experiencia en gobernanza y economía de tokens.
                         </p>
-
                         <ul class="space-y-2">
                             <li class="text-sm text-foreground/80 flex items-start gap-2">
                                 <span class="text-primary mt-0.5">✓</span>
@@ -270,84 +264,110 @@
             </div>
         </section>
 
-
+       
+                          
 
         <!-- Projects Section -->
+
         <section id="projects" class="py-20 md:py-32 relative overflow-hidden">
             <div class="gradient-blob gradient-blob-pink" style="bottom: 0; left: 0;"></div>
-
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-3xl mx-auto text-center space-y-4 mb-12">
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight font-serif">Mis Proyectos</h2>
                 </div>
-
-                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    <!-- Project 1 -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Project 1: BlockRider -->
                     <div class="overflow-hidden group bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:border-primary/40">
                         <div class="relative aspect-video overflow-hidden bg-muted">
                             <img src="/public/BlockRider.png" alt="BlockRider" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                         </div>
-
                         <div class="p-6 space-y-4">
                             <h3 class="text-2xl font-bold">BlockRider</h3>
-
                             <div class="flex flex-wrap gap-2">
                                 <span class="text-xs px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full">Solidity</span>
                                 <span class="text-xs px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full">Web3</span>
                                 <span class="text-xs px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full">IA</span>
                             </div>
-
                             <p class="text-muted-foreground text-sm leading-relaxed">
                                 App de transporte descentralizado con minería de datos y economía colaborativa.
                             </p>
-
                             <div class="flex gap-3 pt-2">
-                                <button class="px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-all text-sm inline-flex items-center gap-2">
+                                <a href="https://martafuentes-mcr.github.io/blockrider-landing/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-all text-sm inline-flex items-center gap-2">
                                     <i data-lucide="external-link" class="w-4 h-4"></i>
-                                    <a href="https://martafuentes-mcr.github.io/blockrider-landing/">Demo</a>
-                                </button>
-                                <button class="px-4 py-2 border border-primary/20 rounded-full hover:bg-primary/10 transition-all text-sm inline-flex items-center gap-2">
+                                    Demo
+                                </a>
+                                <a href="https://github.com/MartaFuentes-mcr/blockrider-landing.git" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-primary/20 rounded-full hover:bg-primary/10 transition-all text-sm inline-flex items-center gap-2">
                                     <i data-lucide="github" class="w-4 h-4"></i>
-                                    <a href="https://github.com/MartaFuentes-mcr/blockrider-landing.git">Código</a>
-                                </button>
+                                    Código
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
+                    <!-- Project 2: CivicDAO -->
                     <div class="overflow-hidden group bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:border-primary/40">
                         <div class="relative aspect-video overflow-hidden bg-muted">
                             <img src="/public/CivicDao.png" alt="CivicDAO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                         </div>
-
                         <div class="p-6 space-y-4">
                             <h3 class="text-2xl font-bold">CivicDAO</h3>
-
                             <div class="flex flex-wrap gap-2">
                                 <span class="text-xs px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full">Nest.js</span>
                                 <span class="text-xs px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full">DAO</span>
                                 <span class="text-xs px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full">Blockchain</span>
                             </div>
-
                             <p class="text-muted-foreground text-sm leading-relaxed">
                                 Presupuesto participativo automatizado con transparencia total vía smart contracts.
                             </p>
-
                             <div class="flex gap-3 pt-2">
-                                <button class="px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-all text-sm inline-flex items-center gap-2">
+                                <a href="https://martafuentes-mcr.github.io/CivicDao/index.html" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-all text-sm inline-flex items-center gap-2">
                                     <i data-lucide="external-link" class="w-4 h-4"></i>
-                                    <a href="https://martafuentes-mcr.github.io/CivicDao/index.html">Demo</a>
-                                </button>
-                                <button class="px-4 py-2 border border-primary/20 rounded-full hover:bg-primary/10 transition-all text-sm inline-flex items-center gap-2">
+                                    Demo
+                                </a>
+                                <a href="https://github.com/MartaFuentes-mcr/CivicDao.git" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-primary/20 rounded-full hover:bg-primary/10 transition-all text-sm inline-flex items-center gap-2">
                                     <i data-lucide="github" class="w-4 h-4"></i>
-                                    <a href="https://github.com/MartaFuentes-mcr/CivicDao.git">Código</a>
-                                </button>
+                                    Código
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: LuxConverter -->
+                    <div class="overflow-hidden group bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:border-primary/40">
+                        <div class="relative aspect-video overflow-hidden bg-muted">
+                            <img 
+                                src="/public/Lux converter.png" 
+                                alt="LuxConverter" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            >
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-2xl font-bold">LuxConverter</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full">JavaScript</span>
+                                <span class="text-xs px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full">APIs</span>
+                                <span class="text-xs px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full">Web3</span>
+                            </div>
+                            <p class="text-muted-foreground text-sm leading-relaxed">
+                                Conversor de criptomonedas y monedas fiat en tiempo real.
+                            </p>
+                            <div class="flex gap-3 pt-2">
+                                <a href="https://martafuentes-mcr.github.io/LuxConverter/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-all text-sm inline-flex items-center gap-2">
+                                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                                    Demo
+                                </a>
+                                <a href="https://github.com/MartaFuentes-mcr/LuxConverter" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-primary/20 rounded-full hover:bg-primary/10 transition-all text-sm inline-flex items-center gap-2">
+                                    <i data-lucide="github" class="w-4 h-4"></i>
+                                    Código
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
 
         <!-- Skills Section -->
         <section id="skills" class="py-20 md:py-32 bg-muted/30">
@@ -358,7 +378,6 @@
                         Tecnologías que uso a diario para construir productos escalables.
                     </p>
                 </div>
-
                 <div class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
                     <div class="p-6 flex flex-col items-center gap-3 min-w-[100px] bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                         <div class="w-12 h-12 relative group-hover:scale-110 transition-transform">
@@ -366,64 +385,54 @@
                         </div>
                         <span class="text-sm font-semibold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">HTML5</span>
                     </div>
-
                     <div class="p-6 flex flex-col items-center gap-3 min-w-[100px] bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                         <div class="w-12 h-12 relative group-hover:scale-110 transition-transform">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-full h-full object-contain">
                         </div>
                         <span class="text-sm font-semibold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">CSS3</span>
                     </div>
-
                     <div class="p-6 flex flex-col items-center gap-3 min-w-[100px] bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                         <div class="w-12 h-12 relative group-hover:scale-110 transition-transform">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-full h-full object-contain">
                         </div>
                         <span class="text-sm font-semibold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">JavaScript</span>
                     </div>
-
                     <div class="p-6 flex flex-col items-center gap-3 min-w-[100px] bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                         <div class="w-12 h-12 relative group-hover:scale-110 transition-transform">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-full h-full object-contain">
                         </div>
                         <span class="text-sm font-semibold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">Python</span>
                     </div>
-
                     <div class="p-6 flex flex-col items-center gap-3 min-w-[100px] bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                         <div class="w-12 h-12 relative group-hover:scale-110 transition-transform">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="w-full h-full object-contain">
                         </div>
                         <span class="text-sm font-semibold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">SQL</span>
                     </div>
-
                     <div class="p-6 flex flex-col items-center gap-3 min-w-[100px] bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                         <div class="w-12 h-12 relative group-hover:scale-110 transition-transform">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-full h-full object-contain">
                         </div>
                         <span class="text-sm font-semibold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">React</span>
                     </div>
-
                     <div class="p-6 flex flex-col items-center gap-3 min-w-[100px] bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                         <div class="w-12 h-12 relative group-hover:scale-110 transition-transform">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity" class="w-full h-full object-contain">
                         </div>
                         <span class="text-sm font-semibold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">Solidity</span>
                     </div>
-
                     <div class="p-6 flex flex-col items-center gap-3 min-w-[100px] bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                         <div class="w-12 h-12 relative group-hover:scale-110 transition-transform">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-full h-full object-contain">
                         </div>
                         <span class="text-sm font-semibold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">Git</span>
                     </div>
-
                     <div class="p-6 flex flex-col items-center gap-3 min-w-[100px] bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                         <div class="w-12 h-12 relative group-hover:scale-110 transition-transform">
-                    <img src="/public/tailwind css.png"width="42" height="42" fill="currentColor" viewBox="0 0 24 24">
-                        
+                            <img src="/public/tailwind css.png" width="42" height="42" alt="Tailwind CSS">
                         </div>
                         <span class="text-sm font-semibold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">Tailwind</span>
                     </div>
-
                     <div class="p-6 flex flex-col items-center gap-3 min-w-[100px] bg-gradient-to-br from-card to-card/50 border border-border/50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                         <div class="w-12 h-12 relative group-hover:scale-110 transition-transform">
                             <img src="https://api.iconify.design/simple-icons/vercel.svg" alt="Vercel" class="w-full h-full object-contain">
@@ -620,5 +629,26 @@
         // Initialize Lucide icons
         lucide.createIcons();
     </script>
+    <script>
+  // Animación de entrada para el Hero Section
+  document.addEventListener('DOMContentLoaded', function() {
+    anime({
+      targets: '#hero .max-w-3xl',
+      opacity: [0, 1],
+      translateY: [50, 0],
+      duration: 1000,
+      easing: 'easeOutQuad'
+    });
+
+    anime({
+      targets: '#hero .model-viewer',
+      opacity: [0, 1],
+      scale: [0.8, 1],
+      duration: 1200,
+      delay: 300,
+      easing: 'easeOutBack'
+    });
+  });
+</script>
 </body>
 </html>

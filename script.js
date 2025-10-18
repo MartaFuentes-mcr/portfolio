@@ -89,3 +89,47 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll("section").forEach((section) => {
   observer.observe(section)
 })
+
+
+
+  // Animación de escala al hacer scroll
+  window.addEventListener('scroll', function() {
+    const avatar = document.querySelector('.avatar-3d');
+    if (!avatar) return;
+
+    const rect = avatar.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isVisible) {
+      anime({
+        targets: avatar,
+        scale: [0.8, 1],
+        opacity: [0.7, 1],
+        duration: 1000,
+        easing: 'easeOutElastic',
+        delay: 200,
+        complete: function() {
+          // Solo se ejecuta una vez
+          avatar.style.transform = 'scale(1)';
+        }
+      });
+    }
+  });
+
+  // Animación inicial al cargar
+  document.addEventListener('DOMContentLoaded', function() {
+    const avatar = document.querySelector('.avatar-3d');
+    if (avatar) {
+      avatar.style.opacity = '0';
+      avatar.style.transform = 'scale(0.8)';
+
+      anime({
+        targets: avatar,
+        scale: 1,
+        opacity: 1,
+        duration: 1200,
+        easing: 'easeOutBack',
+        delay: 500
+      });
+    }
+  });
